@@ -4,7 +4,7 @@
     <test name="Test Main Page ">
 
 
-        <parameter name="value" value="https://rozetka.com.ua/ua/"></parameter>
+        <parameter name="Url" value="https://rozetka.com.ua/ua/"></parameter>
            <parameter name="browser" value="chrome"> </parameter>
 
 

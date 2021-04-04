@@ -49,10 +49,9 @@ public class BasePage extends BaseLocator {
         }
     }
     public void findRandomProductOption(){
-        int el1 =(int)(1+Math.random()*OPTIONSITEAM.size());
-        int el2 =(int)(1+Math.random()*OPTIONSITEAM.size());
-        OPTIONSITEAM.get(el1).click();
-        OPTIONSITEAM.get(el2).click();
+        int el =(int)(1+Math.random()*OPTIONSITEAM.size());
+        OPTIONSITEAM.get(el).click();
+
     }
 
     public void findrandomProduct() {

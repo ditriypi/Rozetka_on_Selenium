@@ -50,4 +50,10 @@ public class BaseLocator  {
 
      @FindBy(css = "[class =\"button button--medium button--with-icon menu__toggle\"]")
      public WebElement CATALOG;
+
+     @FindBy(css = "[class =\"menu-categories__item\"]")
+     public List <WebElement> CATEGORIES;
+
+     @FindBy(css = "[class = 'lang__link']")
+     public WebElement LANGUAGE;
 }

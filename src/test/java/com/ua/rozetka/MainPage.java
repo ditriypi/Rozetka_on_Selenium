@@ -11,44 +11,24 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class MainPage extends  BasePage {
-  private   WebDriver driver;
-  private   String url;
-  private WebDriverWait wait;
+    private   WebDriver driver;
+    private   String url;
+
 
     MainPage(String Url, WebDriver Driver) {
         url = Url;
         driver = Driver;
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, 5);
+
         PageFactory.initElements(driver, this);
 
     }
 
-    public WebElement waitForElement(WebElement ob) {
-        WebDriverWait wait = new WebDriverWait(driver, 15);
-        return wait.until(ExpectedConditions.elementToBeClickable(ob));
+
+    public void switchLanguage(){
+        LANGUAGE.click();
     }
-
-    public String checkSumOnIteamPage () {
-        String returnPrice = null;
-        try {
-        if (waitForElement(PRICEWITHSALE) != null) {
-           waitForElement(PRICEWITHSALE).getText();
-            String ob  = PRICEWITHSALE.getText();
-            return  ob.substring(0,ob.length()-1);
-        }
-    } catch (NullPointerException ex) {}
-        try {
-        if (waitForElement(PRICE) != null) {
-             waitForElement(PRICE).getText() ;
-            String ob = PRICE.getText();
-            return ob.substring(0, ob.length() - 1);
-        }
-    }catch (NullPointerException ex){}
-        return returnPrice;
-}
-
 
 
     public void open(){
@@ -60,31 +40,75 @@ public class MainPage extends  BasePage {
     }
 
     public void  search(String text){
-        waitForElement(SEARCH).sendKeys(text);
-        waitForElement(FIND).click();
+        SEARCH.sendKeys(text);
+        FIND.click();
 
     }
     public void addtoBasket(){
-      waitForElement(BUY).click();
-       waitForElement(CONTINUED).click();
+        BUY.click();
+       CONTINUED.click();
 
     }
 
     public void gotoBasket(){
-        waitForElement(BASKET).click();
+        BASKET.click();
     }
 
 
     public String checkBasketSum(){
-        waitForElement(BASKETWITHITEAM).getText();
-        String og =BASKETWITHITEAM.getText();
+       BASKETWITHITEAM.getText();
+        String og = BASKETWITHITEAM.getText();
         return  og.substring(0,og.length()-2);
     }
 
 
+    public WebElement waitForElement(WebElement ob) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        return wait.until(ExpectedConditions.elementToBeClickable(ob));
+    }
+
+
+
+    public String checkSumOnItemPage () {
+        String returnPrice = null;
+        try {
+            if (PRICEWITHSALE != null) {
+                PRICEWITHSALE.getText();
+                String ob  = PRICEWITHSALE.getText();
+                return  ob.substring(0,ob.length()-1);
+            }
+        } catch (NullPointerException ex) {}
+        try {
+            if (PRICE != null) {
+                PRICE.getText() ;
+                String ob = PRICE.getText();
+                return ob.substring(0, ob.length() - 1);
+            }
+        }catch (NullPointerException ex){}
+        return returnPrice;
+    }
+    public void goToCatalog(){
+        CATALOG.click();
+        CATEGORIES.get(0).click();
+       waitForElement(driver.findElement
+               (By.cssSelector("[href=\"https://rozetka.com.ua/ua/phones-mp3-gps/c80257/\"]"))).click();
+
+
+
+
+    }
+
 
 
 }
+
+
+
+
+
+
+
+
 
 
 

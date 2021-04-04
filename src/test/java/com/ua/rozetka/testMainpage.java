@@ -11,59 +11,76 @@ public class testMainpage {
 
 
     WebDriver Browser;
-    String HHT;
+    String URL;
 
 
     @BeforeMethod
-    @Parameters({"browser", "value"})
-    public void setDriver(String browser, String value) {
-        System.out.println(value);
+    @Parameters({"browser", "Url"})
+    public void setDriver(String browser, String Url) {
         BasePage obj = new BasePage();
         obj.Setdriver(browser);
-        HHT = obj.returnString(value);
+        URL = obj.returnString(Url);
         Browser = obj.returnDriver();
     }
 
     @AfterMethod
     public void Dropdown() {
-          Browser.quit();
+        Browser.quit();
     }
 
 
-     @Test(groups = {"Main page"})
-    public void addIteamToBasketAndCompearePrice() {
-        MainPage page = new MainPage(HHT, Browser);
+
+
+
+
+    @Test(groups = {"MainPage page"})
+    public void addProductFromSearch(){
+        MainPage page = new MainPage(URL, Browser);
         page.open();
         page.search("ноутбук");
         page.findrandomProduct();
-        page.checkSumOnIteamPage();
         page.addtoBasket();
-        page.gotoBasket();
-        page.checkBasketSum();
-        Assert.assertEquals(page.checkBasketSum(), page.checkSumOnIteamPage());
+
     }
 
 
-   @Test(groups = {"Main page"})
+    @Test(groups = {"Main page"})
+    public void addProductFromCatalog() {
+        MainPage page = new MainPage(URL, Browser);
+        page.open();
+        page.goToCatalog();
+        page.findrandomProduct();
+        page.addtoBasket();
+        }
+
+
+      @Test(groups = {"Main page"})
+    public void addItemToBasketAndCompearePrice() {
+        MainPage page = new MainPage(URL, Browser);
+        page.open();
+        page.search("ноутбук");
+        page.findrandomProduct();
+        page.checkSumOnItemPage();
+        page.addtoBasket();
+        page.gotoBasket();
+        page.checkBasketSum();
+        Assert.assertEquals(page.checkBasketSum(), page.checkSumOnItemPage());
+    }
+
+     @Test(groups = {"Main page"})
     public void addProductWithDifferentParameter() {
-        MainPage page = new MainPage(HHT, Browser);
+        MainPage page = new MainPage(URL, Browser);
         page.open("https://rozetka.com.ua/ua/z16_2000000107974_1/p251796656/");
         page.findRandomProductOption();
 
 
     }
-
-
-
- //   @Test(groups = {"Main page"})
-    public void s() {
+    @Test
+    public void switchLanguage(){
+        MainPage page = new MainPage(URL,Browser);
+        page.open();
+        page.switchLanguage();
     }
 }
 
-  //  }
-  //  @Test(groups = {"MainPage"})
-  // public void findproductfromcatalog(){
-    //    MainPage page = new MainPage(Browser,HHT);
-        //page.checkingTheAvailabilityInTheShoppingCart();
 
-//}
