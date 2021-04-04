@@ -44,22 +44,7 @@ public class MainPage extends  BasePage {
         FIND.click();
 
     }
-    public void addtoBasket(){
-        BUY.click();
-       CONTINUED.click();
 
-    }
-
-    public void gotoBasket(){
-        BASKET.click();
-    }
-
-
-    public String checkBasketSum(){
-       BASKETWITHITEAM.getText();
-        String og = BASKETWITHITEAM.getText();
-        return  og.substring(0,og.length()-2);
-    }
 
 
     public WebElement waitForElement(WebElement ob) {

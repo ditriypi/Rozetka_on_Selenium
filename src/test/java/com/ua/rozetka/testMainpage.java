@@ -44,7 +44,7 @@ public class testMainpage {
     }
 
 
-    @Test(groups = {"Main page"})
+     @Test(groups = {"Main page"})
     public void addProductFromCatalog() {
         MainPage page = new MainPage(URL, Browser);
         page.open();

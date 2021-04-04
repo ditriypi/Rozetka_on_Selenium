@@ -8,20 +8,14 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class BaseLocator  {
+public class BaseLocator extends BasketLocator  {
 
 
-     @FindBy(css = "rz-cart.header-actions__component")
-     public WebElement BASKET;
 
-     @FindBy(css = "h4.cart-dummy__heading")
-     public WebElement BASKETSTATUSEMPTY;
 
      @FindBy(css = "input[name=\"search\"]")
      public WebElement SEARCH;
 
-     @FindBy(css= "[class =cart-product__coast]")
-     public WebElement BASKETWITHITEAM;
 
      @FindBy(css = "[class = \"button button_color_green button_size_medium search-form__submit\"]")
      public WebElement SUBMITBUT;
@@ -36,7 +30,7 @@ public class BaseLocator  {
      public   WebElement BUY;
 
 
-     @FindBy(css = "a[class=\"button button_size_medium button_color_gray cart-footer__continue\"]")
+     @FindBy(xpath = "//div[2]/div[2]/rz-shopping-cart/div/div[1]/a")
      public WebElement CONTINUED;
 
      @FindBy(css = ".button.button_color_green.button_size_medium.search-form__submit")
@@ -56,4 +50,6 @@ public class BaseLocator  {
 
      @FindBy(css = "[class = 'lang__link']")
      public WebElement LANGUAGE;
+
+
 }

@@ -60,6 +60,20 @@ public class BasePage extends BaseLocator {
         RANDOMITEAM.get(el).click();
 
     }
+    public void addtoBasket(){
+        BUY.click();
+        CONTINUED.click();
+
+    }
+    public void gotoBasket(){
+        BASKET.click();
+    }
+
+    public String checkBasketSum(){
+        BASKETWITHITEM.getText();
+        String og = BASKETWITHITEM.getText();
+        return  og.substring(0,og.length()-2);
+    }
 
 
 
