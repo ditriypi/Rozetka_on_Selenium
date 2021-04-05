@@ -34,7 +34,7 @@ public class testMainpage {
 
 
     @Test(groups = {"MainPage page"})
-    public void addProductFromSearch(){
+    public void testaddProductFromSearch(){
         MainPage page = new MainPage(URL, Browser);
         page.open();
         page.search("ноутбук");
@@ -45,7 +45,7 @@ public class testMainpage {
 
 
      @Test(groups = {"Main page"})
-    public void addProductFromCatalog() {
+    public void testaddProductFromCatalog() {
         MainPage page = new MainPage(URL, Browser);
         page.open();
         page.goToCatalog();
@@ -55,7 +55,7 @@ public class testMainpage {
 
 
       @Test(groups = {"Main page"})
-    public void addItemToBasketAndCompearePrice() {
+    public void testaddItemToBasketAndCompearePrice() {
         MainPage page = new MainPage(URL, Browser);
         page.open();
         page.search("ноутбук");
@@ -68,15 +68,15 @@ public class testMainpage {
     }
 
      @Test(groups = {"Main page"})
-    public void addProductWithDifferentParameter() {
+    public void testaddProductWithDifferentParameter() {
         MainPage page = new MainPage(URL, Browser);
         page.open("https://rozetka.com.ua/ua/z16_2000000107974_1/p251796656/");
         page.findRandomProductOption();
 
 
     }
-    @Test
-    public void switchLanguage(){
+    @Test(groups = {"Main page"})
+    public void testswitchLanguage(){
         MainPage page = new MainPage(URL,Browser);
         page.open();
         page.switchLanguage();

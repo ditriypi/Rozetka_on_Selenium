@@ -3,7 +3,7 @@ package com.ua.rozetka;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class BasketLocator  {
+public class BasketLocator extends LoginLocator  {
     @FindBy(css = "[class ='counter counter--green']")
     public WebElement BASKETCOUNT;
 
@@ -16,10 +16,10 @@ public class BasketLocator  {
     @FindBy(css = "rz-cart.header-actions__component")
     public WebElement BASKET;
 
-    @FindBy(css = "[id='cartProductActions0']")
+    @FindBy(xpath = "//*[@id=\"cartProductActions0\"]")
     public WebElement CARCTPRODUCT;
 
-    @FindBy(css = "[class='button button--medium button--with-icon button--link context-menu-actions__button']")
+    @FindBy(xpath = "//rz-trash-icon/button")
     public WebElement DELETE;
 
     @FindBy(xpath = "//rz-cart-product/div/div[2]/rz-cart-counter/div/input")

@@ -6,6 +6,7 @@ package com.ua.rozetka;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
+
 import java.util.List;
 
 public class BaseLocator extends BasketLocator  {
@@ -15,7 +16,6 @@ public class BaseLocator extends BasketLocator  {
 
      @FindBy(css = "input[name=\"search\"]")
      public WebElement SEARCH;
-
 
      @FindBy(css = "[class = \"button button_color_green button_size_medium search-form__submit\"]")
      public WebElement SUBMITBUT;

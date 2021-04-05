@@ -22,6 +22,19 @@
             <class name="com.ua.rozetka.testBasketpage"/>
         </classes>
     </test>
+    <test name="Login page ">
+
+
+        <parameter name="Url" value="https://rozetka.com.ua/ua/"/>
+        <parameter name="browser" value="chrome"> </parameter>
+
+
+        <classes>
+            <class name="com.ua.rozetka.testLoginpage"/>
+
+        </classes>
+
+    </test>
         </suite> <!-- Test -->
 
 

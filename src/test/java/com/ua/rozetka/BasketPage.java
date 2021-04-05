@@ -40,7 +40,7 @@ public class BasketPage  extends  BasePage{
 
     }
     public void deleteProduct(){
-        CARCTPRODUCT.click();
+        waitForElement(CARCTPRODUCT).click();
         DELETE.click();
 
     }

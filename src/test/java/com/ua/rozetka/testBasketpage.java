@@ -28,7 +28,7 @@ public class testBasketpage {
 
 
      @Test(groups = {"Basket page"})
-    public void whenAddingItemCounterGrow() {
+    public void testwhenAddingItemCounterGrow() {
         BasketPage page = new BasketPage(Browser, URL);
         page.open("https://bt.rozetka.com.ua/ua/washing_machines/c80124/");
         page.findrandomProduct();
@@ -40,7 +40,7 @@ public class testBasketpage {
     }
 
      @Test(groups = {"Basket page"})
-    public void deleteProductFromCard() {
+    public void testdeleteProductFromCard() {
         BasketPage page = new BasketPage(Browser, URL);
         page.open("https://bt.rozetka.com.ua/ua/washing_machines/c80124/");
         page.findrandomProduct();
@@ -52,7 +52,7 @@ public class testBasketpage {
     }
 
      @Test(groups = {"Basket page"})
-    public void changeAmountProductInBasket() throws InterruptedException {
+    public void testchangeAmountProductInBasket() throws InterruptedException {
         BasketPage page = new BasketPage(Browser, URL);
         page.open("https://bt.rozetka.com.ua/ua/washing_machines/c80124/");
         page.findrandomProduct();
